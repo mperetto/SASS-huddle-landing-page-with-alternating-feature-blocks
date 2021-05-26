@@ -32,12 +32,21 @@ body {
   width: 100%;
 }
 
+.p-l-10 {
+  padding-left: 10px;
+}
+
+.p-r-10 {
+  padding-right: 10px;
+}
+
 .m-auto {
   margin: auto;
 }
 
 .container {
   max-width: 768px;
+  padding: 30px;
 }
 
 .navbar {
@@ -119,6 +128,10 @@ body {
       flex-basis: 50%;
 }
 
+.banner__title, .banner__content {
+  margin-bottom: 20px;
+}
+
 .button {
   border-radius: 10rem;
   background: #fff;
@@ -197,6 +210,7 @@ body {
 }
 
 .card-banner {
+  max-width: 100%;
   position: relative;
   background: #fff;
   width: -webkit-max-content;
@@ -222,7 +236,6 @@ body {
   padding: 3.5rem 2rem;
   position: relative;
   z-index: 1;
-  height: 300px;
   background: #000;
 }
 
@@ -322,5 +335,78 @@ body {
 
 .footer__copyright {
   text-align: right;
+}
+
+/*  Responsive  */
+@media screen and (max-width: 699px) {
+  .header__banner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .banner__button {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .header {
+    padding: 30px 20px;
+  }
+  .navbar__logo {
+    width: 150px;
+  }
+  .footer__container {
+    -ms-grid-rows: (auto)[2];
+        grid-template-rows: repeat(2, auto);
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  .footer__container .col:last-child {
+    grid-column: span 3;
+    margin: 10px 0;
+  }
+  .footer__copyright {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .header {
+    background-image: url("../images/bg-hero-mobile.svg");
+  }
+  .navbar__logo {
+    width: 100px;
+  }
+  .footer__container {
+    -ms-grid-rows: (auto)[4];
+        grid-template-rows: repeat(4, auto);
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+  .footer__container .col {
+    margin: 10px 0;
+    -ms-grid-column: 1;
+    grid-column: 1;
+  }
+  .footer__container .col:last-child {
+    -ms-grid-column: 1;
+    grid-column: 1;
+  }
+  .footer__link {
+    margin: 5px 0;
+  }
+  .card-banner {
+    padding: 24px 16px;
+  }
+  .card, .card:nth-child(2) {
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
 }
 /*# sourceMappingURL=style.css.map */
